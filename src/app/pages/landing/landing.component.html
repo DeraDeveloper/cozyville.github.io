@@ -1,0 +1,72 @@
+<div class="bg-color">
+    <div class="hero-section">
+        <app-navigation></app-navigation>
+        <h1 class="text-white text-center">A Holidaymaker's Dream</h1>
+    </div>
+</div>
+
+<div id="about">
+    <h2 class="text-center font-weight-bold pt-5">Who we are?</h2>
+
+    <div class="text-center">
+        <h5 class="w-50 text-secondary font-weight-normal pt-4 mx-auto">Looking for a summer sunshine or a cozy chill, we got you covered. 
+            <p>With a wide range of holiday venues and fun events, you'd be sure to find what you need on our platform</p>
+            <p>Select from our packages below which have been grouped to suit your needs</p></h5>
+
+        <hr>
+    </div>
+</div>
+
+<div id="package">
+    <h2 class="text-center font-weight-bold pt-5">Our Packages</h2>
+
+    <div class="text-center">
+        <div class="row my-5">
+            <div class="col-md-6">
+                <div id="summer" (click)="onPackageSelected($event)" class="card bg-package-1 box-shadow ml-auto" style="width: 20rem; cursor:pointer">
+                    <!-- <img src="assets/img/summer.png" alt="" style="max-height: 260px"> -->
+                    <h3 class="text-white">Sunny Summer</h3>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="winter" (click)="onPackageSelected($event)" class="card bg-package-2 box-shadow mr-auto" style="width: 20rem; cursor:pointer">
+                    <!-- <img src="assets/img/other.png" alt="" style="max-height: 260px"> -->
+                    <h3 class="text-white">Cozy Winter</h3>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+
+<div id="slide" style="display: none">
+        <h2 class="text-center font-weight-bold pt-5">{{selectedPackage}}</h2>
+
+        <div *ngIf ="loading" class="text-center">
+                <fa name="cog" animation="spin" size="4x"></fa>
+                <p>loading...</p>
+        </div>
+
+        <div *ngIf ="!loading" class="col-md-12 my-5">
+                <div class="card box-shadow mx-auto" style="max-width: 42rem">
+                    <!-- carousel -->
+                    <carousel>
+                        <slide *ngFor="let result of results; let index=index">
+                            <img class="carousel-img" [src]="result.urls['raw']" alt="result.description" style="display: block; width: 100%;">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>{{result.description}}</h3>
+                                <p>Photography by: {{result.user['name']}}</p>
+                                <button class="btn btn-primary" (click)="purchasePackage()">Buy Package</button>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
+        </div>
+
+        <div class="text-center mb-5">
+            <button type="button" class="btn btn-primary mb-3" (click)="backToPackages()">
+                Back to Packages
+            </button>
+        </div>
+</div>

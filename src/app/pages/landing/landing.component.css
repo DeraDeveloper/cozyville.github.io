@@ -1,0 +1,56 @@
+.hero-section {
+    /* background: #ff000014 !important; */
+    background-color: #1010109c !important;
+    height: 60vh;
+}
+
+
+.bg-color {
+    background-image: url(/assets/img/bg-img.jpg) !important;
+    background-position: center;
+    height: 60vh;
+    background-repeat: no-repeat;
+}
+
+.bg-package-1 {
+    background-image: url(/assets/img/summer.png) !important;
+    height: 40vh;
+}
+
+.bg-package-2 {
+    background-image: url(/assets/img/other.png) !important;
+    height: 40vh;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 4px 7px 39px -3px rgba(150, 145, 150, 1);
+    -moz-box-shadow: 4px 7px 39px -3px rgba(150, 145, 150, 1);
+    box-shadow: 4px 7px 39px -3px rgba(150, 145, 150, 1);
+}
+
+.bg-package-1>h3 {
+    position: absolute;
+    top: 45%;
+    left: 21%;
+}
+
+.bg-package-2>h3 {
+    position: absolute;
+    top: 45%;
+    left: 28%;
+}
+
+.hero-section>h1 {
+    top: 25%;
+    left: 36%;
+    position: absolute;
+}
+
+hr {
+    width: 3%;
+    border: 2px solid #473326;
+}
+
+.carousel-img {
+    height: 60vh;
+}
